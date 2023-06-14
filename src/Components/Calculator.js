@@ -1,33 +1,194 @@
+/** @format */
+import React, { useState } from 'react';
 import './Style.css';
 
 function Calculator() {
+  const [result, setResult] = useState('');
+  const [isPositive, setIsPositive] = useState(true);
+
+  const handleChange = (value) => {
+    setResult(result + value);
+  };
+
+  const clearHandler = () => {
+    setResult('');
+    setIsPositive(true);
+  };
+
+  const toggleSignHandler = () => {
+    setIsPositive(!isPositive);
+    setResult((previousSign) => {
+      if (isPositive) {
+        return `-${previousSign}`;
+      }
+      return previousSign.slice(1);
+    });
+  };
+
+  const handleEval = () => {
+    try {
+      /* eslint no-eval: 0 */
+      const resultsEval = eval(result);
+
+      setResult(resultsEval.toString());
+    } catch (err) {
+      setResult('Error');
+    }
+  };
+
   return (
     <div className="container">
       <div className="grid-container">
         <div className="grid-item-input">
-          <input type="text" className="value-input" id="value-input" placeholder="0" />
+          <input
+            type="text"
+            className="value-input"
+            id="value-input"
+            value={result}
+            placeholder="0"
+          />
         </div>
-        <div className="grid-item" id="item-Ac">Ac</div>
-        <div className="grid-item" id="item- pds">+/-</div>
-        <div className="grid-item" id="item-mod">%</div>
-        <div className="grid-item grid-item-color" id="item-div">/</div>
-        <div className="grid-item" id="item-seven">7</div>
-        <div className="grid-item" id="item-eight">8</div>
-        <div className="grid-item" id="item-nine">9</div>
-        <div className="grid-item grid-item-color" id="item-times">x</div>
-        <div className="grid-item" id="item-four">4</div>
-        <div className="grid-item" id="item-five">5</div>
-        <div className="grid-item" id="item-six">6</div>
-        <div className="grid-item grid-item-color" id="item-sub">-</div>
-        <div className="grid-item" id="item-one">1</div>
-        <div className="grid-item" id="item-two">2</div>
-        <div className="grid-item" id="item-three">3</div>
-        <div className="grid-item grid-item-color" id="item-add">+</div>
-        <div className="grid-item-zero grid-item" id="item-zero">0</div>
-        <div className="grid-item" id="item-dot">.</div>
-        <div className="grid-item grid-item-color" id="item-equal">=</div>
+        <button
+          type="button"
+          className="grid-item"
+          name="Ac"
+          id="clear"
+          onClick={clearHandler}
+        >
+          Ac
+        </button>
+        <button type="button" className="grid-item" onClick={toggleSignHandler}>
+          +/-
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          onClick={() => handleChange('%')}
+        >
+          %
+        </button>
+        <button
+          type="button"
+          className="grid-item grid-item-color"
+          name="/"
+          onClick={() => handleChange('/')}
+        >
+          /
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="7"
+          onClick={() => handleChange('7')}
+        >
+          7
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="8"
+          onClick={() => handleChange('8')}
+        >
+          8
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          onClick={() => handleChange('9')}
+        >
+          9
+        </button>
+        <button
+          type="button"
+          className="grid-item grid-item-color"
+          onClick={() => handleChange('*')}
+        >
+          x
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          onClick={() => handleChange('4')}
+        >
+          4
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="5"
+          onClick={() => handleChange('5')}
+        >
+          5
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="6"
+          onClick={() => handleChange('6')}
+        >
+          6
+        </button>
+        <button
+          type="button"
+          className="grid-item grid-item-color"
+          name="-"
+          onClick={() => handleChange('-')}
+        >
+          -
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="1"
+          onClick={() => handleChange('1')}
+        >
+          1
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          onClick={() => handleChange('2')}
+        >
+          2
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          onClick={() => handleChange('3')}
+        >
+          3
+        </button>
+        <button
+          type="button"
+          className="grid-item grid-item-color"
+          onClick={() => handleChange('+')}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          className="grid-item-zero grid-item"
+          onClick={() => handleChange('0')}
+        >
+          0
+        </button>
+        <button
+          type="button"
+          className="grid-item"
+          name="."
+          onClick={() => handleChange('.')}
+        >
+          .
+        </button>
+        <button
+          type="button"
+          className="grid-item grid-item-color"
+          name="="
+          onClick={handleEval}
+        >
+          =
+        </button>
       </div>
-
     </div>
   );
 }
