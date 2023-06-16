@@ -1,29 +1,35 @@
 /* eslint-disable */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import calculate from './logic/calculator';
 
-//name ,obj ,setObj
-function Buttons(props) {
+const Buttons = ({ obj, name, setObj }) => {
   const handleClick = (e) => {
-    props.setObj(
-      calculate(props.obj, e.target.innerText)
+    setObj(
+      calculate(obj, e.target.innerText),
     );
-    console.log(e.target.innerText)
   };
-	
-  const operator = ['+', '-', '/', 'x','='];
-  return (
-   
-    <div 
-    className={`grid-item ${operator.includes(props.name) ? `grid-item-color`:''} ${(props.name == "0") ? `grid-item-zero`:''}`}
-    onClick={(e) => handleClick(e)}
-    >
-    {props.name}
-		</div>
-	
-  );
-}
 
+  const operator = ['+', '-', '/', 'x', '='];
+  return (
+
+    <div
+      className={`grid-item ${operator.includes(name) ? 'grid-item-color' : ''} ${(name === '0') ? 'grid-item-zero' : ''}`}
+      onClick={(e) => handleClick(e)}
+    >
+      {name}
+    </div>
+
+  );
+};
+/* eslint-disable */
 export default Buttons;
 
+// Buttons.defaultProps = {
+//   obj: {},
+// };
+Buttons.propTypes = {
+  obj: PropTypes.object.isRequired,
+  setObj: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+};

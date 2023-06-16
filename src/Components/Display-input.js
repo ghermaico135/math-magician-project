@@ -1,31 +1,28 @@
-/* eslint-disable */
 import React from 'react';
-// import PropTypes from 'prop-types';
-import './Style.css';
+import PropTypes from 'prop-types';
 
-function DisplayInput(props) {
+const DisplayInput = ({ obj }) => (!obj ? (
+  <div className="grid-item-input value-input">
+    <p>0</p>
+  </div>
+) : (
+  <div className="grid-item-input value-input">
+    {obj.total}
+    {obj.operation}
+    {obj.next}
 
-  const handleClick = (e) => {
-    if(e.target.innerText == "Ac"){
-      props.setObj({
-        total: null,
-        next: null,
-        operation: null
-      }
-        
-      );
-    }
-    console.log(e.target.innerText)
-  };
-
-  return (
-    <div className="grid-item-input value-input">
-    {props.result.total}{props.result.operation }{props.result.next} 
-    </div>
-    
-  );
-}
-
-
+  </div>
+));
 
 export default DisplayInput;
+
+DisplayInput.defaultProps = {
+  obj: {},
+};
+DisplayInput.propTypes = {
+  obj: PropTypes.shape({
+    total: PropTypes.string,
+    operation: PropTypes.string,
+    next: PropTypes.string,
+  }),
+};
