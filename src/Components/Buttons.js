@@ -3,13 +3,12 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import calculate from './logic/calculator';
 
-//name ,obj ,setObj
 function Buttons(props) {
   const handleClick = (e) => {
     props.setObj(
       calculate(props.obj, e.target.innerText)
     );
-    console.log(e.target.innerText)
+    
   };
 	
   const operator = ['+', '-', '/', 'x','='];
