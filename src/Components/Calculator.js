@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './Style.css';
 import DisplayInput from './Display-input';
 import Buttons  from "./Buttons"
+import Quote from './Quote';
 
 function Calculator() {
 
@@ -37,7 +38,7 @@ function Calculator() {
         <Buttons name="." obj={obj} setObj={setObj} />
         <Buttons name="=" obj={obj} setObj={setObj} />
       </div>
-
+      <Quote />
     </div>
   );
 }

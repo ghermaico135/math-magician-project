@@ -1,50 +1,51 @@
-/*eslint-disabled */
-import React,{useState,useEffect, useLayoutEffect} from "react";
+import React, { useState, useEffect } from 'react';
 
-function Quote(){
-  const[category, setCategory] = useState([])
-  const[loading, isLoading] = useState(false)
-  const[error,hasError] = useState(false)
+function Quote() {
+  const [result, setResult] = useState([]);
+  const [loading, isLoading] = useState(false);
+  const [error, hasError] = useState(false);
 
-  useEffect(()=>{
-    const fetchQuote = async()=>{
-      isLoading(true)
-      try{
-        const fetchResponse = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`)
-       
-        const response = await fetchResponse.json()
-        setCategory(response)
-      } catch(error){
-        hasError(true)
-      }
-      isLoading(false)
-    }
-    fetchQuote()
-  },[category,isLoading])
+  useEffect(() => {
+    const fetchQuote = async () => {
+      isLoading(true);
 
-  // const handleDisplay =() =>{
-  //   {category.map((item)=>(
-  //     <ul>
-  //       <li key={item.id}>{item.quote}</li>
-  //       <li key={item.id}>{item.author}</li>
-  //       <li key={item.id}>{item.category}</li>
-  //     </ul>
-      
-  // }
+      const fetchResponse = await fetch('https://api.api-ninjas.com/v1/quotes?category=business', {
+        method: 'GET',
 
-  return(
-    <div>
-      {category.map((item)=>(
-        <ul>
-          <li key={item.id}>{item.quote}</li>
-          <li key={item.id}>{item.author}</li>
-          <li key={item.id}>{item.category}</li>
-        </ul>
-        
-      ))
-      }
-    </div>
-  )
+        headers: { 'X-Api-Key': 'YwLUjg+exEy5ooLnLuX8vg==zjF4otWZ46utsveI' },
+      });
+      const response = await fetchResponse.json();
+
+      setResult(response[0]);
+
+      isLoading(false);
+    };
+    fetchQuote();
+  }, [isLoading]);
+
+  if (loading) {
+    return <div>loading...</div>;
+  } if (error) {
+    hasError(true);
+    return <div>Error...</div>;
+  }
+  return (
+    <ul className="category-container">
+      <li className="category-item">
+        {' '}
+        Quote :
+        {result.quote}
+      </li>
+      <li className="category-item">
+        Author :
+        {result.author}
+      </li>
+      <li className="category-item">
+        Category:
+        {result.category}
+      </li>
+    </ul>
+  );
 }
 
-export default Quote
+export default Quote;
