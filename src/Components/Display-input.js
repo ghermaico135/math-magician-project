@@ -1,29 +1,28 @@
-/** @format */
-/* eslint-disable */
-import React from "react";
-import PropTypes from "prop-types";
-import "./Style.css";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const DisplayInput = ({ obj }) => {
-  const show = (obj) => {
-    let len = Object.keys(obj).length;
-    if (len == '3') {
-      if (obj.operation == null && obj.next == null) {
-        return obj.total;
-      } else if (obj.operation && obj.next == null) {
-        return obj.total + ' ' + obj.operation;
-      } else if (obj.operation && obj.next && obj.total) {
-        return obj.total + ' ' + obj.operation + ' ' + obj.next;
-      }
-    }
-    if (len == '2') {
-      return obj.next;
-    }
-  };
-	return <div className="grid-item-input value-input">{show(obj) || 0}</div>;
-};
+const DisplayInput = ({ obj }) => (!obj ? (
+  <div className="grid-item-input value-input">
+    <p>0</p>
+  </div>
+) : (
+  <div className="grid-item-input value-input">
+    {obj.total}
+    {obj.operation}
+    {obj.next}
 
-DisplayInput.propTypes = {
-	obj: PropTypes.object.isRequired,
-};
+  </div>
+));
+
 export default DisplayInput;
+
+DisplayInput.defaultProps = {
+  obj: {},
+};
+DisplayInput.propTypes = {
+  obj: PropTypes.shape({
+    total: PropTypes.string,
+    operation: PropTypes.string,
+    next: PropTypes.string,
+  }),
+};
