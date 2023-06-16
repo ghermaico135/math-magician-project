@@ -25,9 +25,6 @@ const Buttons = ({ obj, name, setObj }) => {
 /* eslint-disable */
 export default Buttons;
 
-// Buttons.defaultProps = {
-//   obj: {},
-// };
 Buttons.propTypes = {
   obj: PropTypes.object.isRequired,
   setObj: PropTypes.func.isRequired,
