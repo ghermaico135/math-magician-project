@@ -1,33 +1,36 @@
+import React, { useState } from 'react';
 import './Style.css';
+import DisplayInput from './Display-input';
+import Buttons from './Buttons';
 
 function Calculator() {
+  const [obj, setObj] = useState({
+  });
+
   return (
     <div className="container">
       <div className="grid-container">
-        <div className="grid-item-input">
-          <input type="text" className="value-input" id="value-input" placeholder="0" />
-        </div>
-        <div className="grid-item" id="item-Ac">Ac</div>
-        <div className="grid-item" id="item- pds">+/-</div>
-        <div className="grid-item" id="item-mod">%</div>
-        <div className="grid-item grid-item-color" id="item-div">/</div>
-        <div className="grid-item" id="item-seven">7</div>
-        <div className="grid-item" id="item-eight">8</div>
-        <div className="grid-item" id="item-nine">9</div>
-        <div className="grid-item grid-item-color" id="item-times">x</div>
-        <div className="grid-item" id="item-four">4</div>
-        <div className="grid-item" id="item-five">5</div>
-        <div className="grid-item" id="item-six">6</div>
-        <div className="grid-item grid-item-color" id="item-sub">-</div>
-        <div className="grid-item" id="item-one">1</div>
-        <div className="grid-item" id="item-two">2</div>
-        <div className="grid-item" id="item-three">3</div>
-        <div className="grid-item grid-item-color" id="item-add">+</div>
-        <div className="grid-item-zero grid-item" id="item-zero">0</div>
-        <div className="grid-item" id="item-dot">.</div>
-        <div className="grid-item grid-item-color" id="item-equal">=</div>
+        <DisplayInput obj={obj} />
+        <Buttons name="AC" obj={obj} setObj={setObj} />
+        <Buttons name="+/-" obj={obj} setObj={setObj} />
+        <Buttons name="%" obj={obj} setObj={setObj} />
+        <Buttons name="/" obj={obj} setObj={setObj} />
+        <Buttons name="7" obj={obj} setObj={setObj} />
+        <Buttons name="8" obj={obj} setObj={setObj} />
+        <Buttons name="9" obj={obj} setObj={setObj} />
+        <Buttons name="x" obj={obj} setObj={setObj} />
+        <Buttons name="4" obj={obj} setObj={setObj} />
+        <Buttons name="5" obj={obj} setObj={setObj} />
+        <Buttons name="6" obj={obj} setObj={setObj} />
+        <Buttons name="-" obj={obj} setObj={setObj} />
+        <Buttons name="1" obj={obj} setObj={setObj} />
+        <Buttons name="2" obj={obj} setObj={setObj} />
+        <Buttons name="3" obj={obj} setObj={setObj} />
+        <Buttons name="+" obj={obj} setObj={setObj} />
+        <Buttons name="0" obj={obj} setObj={setObj} />
+        <Buttons name="." obj={obj} setObj={setObj} />
+        <Buttons name="=" obj={obj} setObj={setObj} />
       </div>
-
     </div>
   );
 }
