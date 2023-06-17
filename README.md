@@ -5,7 +5,7 @@
  
   <br/>
   <h3><b>math-magician-project</b></h3>
-  <h5>The **Math-Magicians** is a react project: A fancy web calculator application based on 1 external APIs with 2 user interfaces that have the option. The project is implemented following GitFlow and react redux linter.<h5>
+  <h5>The **Math-Magicians** is a react project: A fancy web calculator application based on 1 external APIs. The project is implemented following GitFlow and react redux linter.<h5>
 </div>
 
 
@@ -73,12 +73,6 @@ Built using g **GitFlow** it is  very simple yet powerful project served by **re
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
- <a  href="https://ghermaico135.github.io/math-magician-project/">
-Live Demo</a>
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
