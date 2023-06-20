@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Quote.css';
+import Navbar from './Navbar';
 
 function Quote() {
   const [result, setResult] = useState([]);
@@ -31,23 +32,27 @@ function Quote() {
     return <div>Error...</div>;
   }
   return (
-    <div className="wrapper">
-      <ul className="category-container">
-        <li className="category-item">
-          {' '}
-          Quote :
-          {result.quote}
-        </li>
-        <li className="category-item">
-          Author :
-          {result.author}
-        </li>
-        <li className="category-item">
-          Category:
-          {result.category}
-        </li>
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <div className="wrapper">
+        <ul className="category-container">
+          <li className="category-item">
+            {' '}
+            Quote :
+            {result.quote}
+          </li>
+          <li className="category-item">
+            Author :
+            {result.author}
+          </li>
+          <li className="category-item">
+            Category:
+            {result.category}
+          </li>
+        </ul>
+      </div>
+
+    </>
 
   );
 }

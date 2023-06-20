@@ -51,7 +51,3 @@ body {
 .links:active {
   color: red;
 }
-
-.layout-container{
-  width: 100%;
-}
