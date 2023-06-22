@@ -1,19 +1,19 @@
-# Math-Magicians#
+# math-magician-project#
 <a name="readme-top"></a>
 
 <div align="center">
  
   <br/>
-  <h3><b>Math-Magicians</b></h3>
-  <h5>The **Math-Magicians** is a react project: A fancy web calculator application based on 1 external APIs with 2 user interfaces that have the option. The project is implemented following GitFlow and react redux linter.<h5>
+  <h3><b>math-magician-project</b></h3>
+  <h5>The **Math-Magicians** is a react project: A fancy web calculator application based on 1 external APIs. The project is implemented following GitFlow and react redux linter.<h5>
 </div>
 
 
 # 📗 Table of Contents
 
-- [Math-Magicians#](#math-magicians)
+- [math-magician-project#](#math-magician-project)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 math-magicians](#-math-magicians)
+- [📖 math-magician-project](#-math-magician-project)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -33,9 +33,9 @@
   - [📝 License ](#-license-)
 
 
-# 📖 math-magicians<a name="about-project"></a>
+# 📖 math-magician-project<a name="about-project"></a>
 
-This project **math-magicians** is a project that demonstrates the use of **react app development**.
+This project **math-magician-project** is a project that demonstrates the use of **react app development**.
 
 
 Built using g **GitFlow** it is  very simple yet powerful project served by **react app** . Along with dynamic modification of the DOM with Events including all the coding best practices. 
@@ -74,12 +74,6 @@ Built using g **GitFlow** it is  very simple yet powerful project served by **re
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
- <a  href="https://ghermaico135.github.io/Math-magicians/">
-Live Demo</a>
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -104,7 +98,7 @@ Clone this repository to your desired folder:
 ### Usage
 
 To run the project, execute the following command:
--cd math-magicians
+-cd math-magician-project
 - npm start
 ### To add dependencies and run linter tests 
 
@@ -124,7 +118,7 @@ Initial Step:
 *************
 For react:
 *************
-- To install npx create-react-app math-magicians:
+- To install npx create-react-app math-magician-project:
 
 
 
@@ -168,7 +162,7 @@ https://...
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ghermaico135/Math-magicians/issues).
+Feel free to check the [issues page](https://github.com/ghermaico135/math-magician-project/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
